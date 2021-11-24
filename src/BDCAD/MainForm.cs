@@ -15,9 +15,8 @@ namespace BDCAD
     {
         private static string _widthHelpMessage = "600-1000 мм";
         private static string _lengthHelpMessage = "75% от ширины-750 мм";
-        private static string _h1HelpMessage = "Меньше h1 не меньше чем в 7.5 раз и больше 100 мм";
+        private static string _h1HelpMessage = "Меньше h2 не меньше чем в 7.5 раз и больше 100 мм";
         private static string _h2HelpMessage = "600-1050 мм";
-        private static string _radiusHelpMessage = "0-180 градусов";
 
         public MainForm()
         {
@@ -28,17 +27,13 @@ namespace BDCAD
         {
             MaximumSize = Size;
             MinimumSize = Size;
-            RadiusEdgeScrollBar.Value = 0;
-            RadiusAngleScrollBar.Value = 0;
-            HeightTableTextBox.ShowHelpMessageIfEmpty(_h2HelpMessage);
-            HeightTableLegTextBox.ShowHelpMessageIfEmpty(_h1HelpMessage);
-            LengthTextBox.ShowHelpMessageIfEmpty(_lengthHelpMessage);
-            WidthTextBox.ShowHelpMessageIfEmpty(_widthHelpMessage);
-            
+            ClearButton_Click(sender, e);
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
+            RadiusEdgeScrollBar.Value = 0;
+            RadiusAngleScrollBar.Value = 0;
             WidthTextBox.Clear();
             LengthTextBox.Clear();
             HeightTableTextBox.Clear();
@@ -67,7 +62,7 @@ namespace BDCAD
             HeightTableLegTextBox.ValidateValueRange(100, 140);
 
             if (int.TryParse(HeightTableTextBox.Text, out var temp))
-                HeightTableLegTextBox.ValidateValueRange(100, temp * 75 / 100);
+                HeightTableLegTextBox.ValidateValueRange(100, temp * 10 / 75);
         }
 
         private void HeightTableTextBox_TextChanged(object sender, EventArgs e)

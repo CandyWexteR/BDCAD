@@ -155,9 +155,9 @@
             // 
             // ClearButton
             // 
-            this.ClearButton.Location = new System.Drawing.Point(9, 375);
+            this.ClearButton.Location = new System.Drawing.Point(12, 375);
             this.ClearButton.Name = "ClearButton";
-            this.ClearButton.Size = new System.Drawing.Size(200, 40);
+            this.ClearButton.Size = new System.Drawing.Size(175, 40);
             this.ClearButton.TabIndex = 14;
             this.ClearButton.Text = "Очистить";
             this.ClearButton.UseVisualStyleBackColor = true;
@@ -165,9 +165,9 @@
             // 
             // BuildButton
             // 
-            this.BuildButton.Location = new System.Drawing.Point(215, 375);
+            this.BuildButton.Location = new System.Drawing.Point(197, 375);
             this.BuildButton.Name = "BuildButton";
-            this.BuildButton.Size = new System.Drawing.Size(156, 40);
+            this.BuildButton.Size = new System.Drawing.Size(175, 40);
             this.BuildButton.TabIndex = 15;
             this.BuildButton.Text = "Построить";
             this.BuildButton.UseVisualStyleBackColor = true;
@@ -177,7 +177,7 @@
             // 
             this.ExitButton.Location = new System.Drawing.Point(12, 421);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(359, 39);
+            this.ExitButton.Size = new System.Drawing.Size(360, 40);
             this.ExitButton.TabIndex = 16;
             this.ExitButton.Text = "Выход";
             this.ExitButton.UseVisualStyleBackColor = true;
@@ -242,8 +242,9 @@
             this.Controls.Add(this.OpenCompassButton);
             this.Controls.Add(this.WidthTextBox);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Плагин постройки шкаф-стола";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
