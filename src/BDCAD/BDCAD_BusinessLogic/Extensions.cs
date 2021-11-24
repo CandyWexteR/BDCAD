@@ -4,7 +4,7 @@
     {
         public static bool IsInRange(this int value, int from, int to)
         {
-            return value > from && value < to;
+            return value >= from && value <= to;
         }
     }
 }
