@@ -89,6 +89,79 @@ namespace KompasWrapper
 			CreateLegs();
 			CreateEdge();
 			CreateHead();
+			CreateDoor();
+		}
+
+		/// <summary>
+		/// Создает двери
+		/// </summary>
+		private void CreateDoor()
+		{
+			const double doorDistance = 2;
+			const double doorWidth = 10;
+			var dresserHeight = _parameters.GetValue(
+				ParameterType.HeightTable);
+			var halfWidth = _parameters.GetValue(
+				ParameterType.WidthTable) / 2;
+			var lenght = _parameters.GetValue(
+				ParameterType.LengthTable);
+			ksEntity plane = _kompasWrapper.CreatePlaneOffset(_part, halfWidth, Obj3dType.o3d_planeXOZ);
+			ksEntity sketch = _part.NewEntity((int)Obj3dType.o3d_sketch);
+			ksSketchDefinition sketchDefinition = sketch.GetDefinition();
+			sketchDefinition.SetPlane(plane);
+			sketch.Create();
+
+			// Входим в режим редактирования эскиза
+			ksDocument2D document2D = sketchDefinition.BeginEdit();
+
+			var point1 = new Point(-lenght/2,
+				-dresserHeight + HoleDistance + doorDistance);
+			var point2 = new Point(-doorDistance, -doorDistance);
+			var point3 = new Point(doorDistance,
+				-dresserHeight + HoleDistance + doorDistance);
+			var point4 = new Point(lenght / 2, -doorDistance);
+
+			CreateRectangle(point1, point2, document2D);
+			CreateRectangle(point3, point4, document2D);
+
+			sketchDefinition.EndEdit();
+
+			_kompasWrapper.BossExtrusion(_part, sketch, doorWidth,
+				Direction_Type.dtNormal);
+
+			CreateDoorHole(doorDistance, doorWidth);
+		}
+
+		/// <summary>
+		/// Сделать отверстия в двери
+		/// </summary>
+		private void CreateDoorHole(double doorDistance, double doorWidth)
+		{
+			var dresserHeight = _parameters.GetValue(
+				ParameterType.HeightTable);
+			var halfWidth = _parameters.GetValue(
+				ParameterType.WidthTable) / 2;
+			ksEntity plane = _kompasWrapper.CreatePlaneOffset(_part, halfWidth, Obj3dType.o3d_planeXOZ);
+			ksEntity sketch = _part.NewEntity((int)Obj3dType.o3d_sketch);
+			ksSketchDefinition sketchDefinition = sketch.GetDefinition();
+			sketchDefinition.SetPlane(plane);
+			sketch.Create();
+			const double holeRadius = 10;
+
+			var document2D = sketchDefinition.BeginEdit();
+
+			var circlePoint1 = new Point(doorDistance * 2 + holeRadius,
+				-dresserHeight + HoleDistance + doorDistance * 2 + holeRadius);
+			var circlePoint2 = new Point(-doorDistance * 2 - holeRadius,
+				-dresserHeight + HoleDistance + doorDistance * 2 + holeRadius);
+
+			CreateEllipse(circlePoint1.X, circlePoint1.Y,
+				holeRadius, holeRadius, document2D);
+			CreateEllipse(circlePoint2.X, circlePoint2.Y,
+				holeRadius, holeRadius, document2D);
+			sketchDefinition.EndEdit();
+
+			_kompasWrapper.CutEvolution(_part, sketch, -doorWidth);
 		}
 
 		/// <summary>
