@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Net.Mime;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Core;
 using KompasWrapper;
@@ -73,6 +67,7 @@ namespace TableBuild
 				ParameterType.WidthTable).ToString();
 		}
 
+		//TODO: RSDN
 		/// <summary>
 		/// Обработчик события нажатия на кнопку
 		/// </summary>
@@ -124,6 +119,7 @@ namespace TableBuild
 			errorTextBox.BackColor = Color.White;
 		}
 
+		//TODO: XML
 		private void TextBox_MouseHover(object sender, EventArgs e)
 		{
 			if (!(sender is TextBox textBox))

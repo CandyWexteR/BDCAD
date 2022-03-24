@@ -234,6 +234,7 @@ namespace KompasWrapper
 			_kompasWrapper.CutEvolution(_part, sketch, HoleDistance);
 		}
 
+		//TODO: XML
 		/// <summary>
 		/// Создает соединения углов
 		/// </summary>
@@ -244,6 +245,7 @@ namespace KompasWrapper
 		private void CreateCornersConnection(ksDocument2D document2D, List<Point> points,
 			double radius, int[] angles, short direction)
 		{
+			//TODO: RSDN
 			document2D.ksLineSeg(points[0].X, points[0].Y, points[1].X, points[1].Y, 1);
 			document2D.ksLineSeg(points[0].X, points[0].Y, points[2].X, points[2].Y, 1);
 			document2D.ksArcByAngle(points[2].X, points[1].Y, radius,
@@ -309,6 +311,7 @@ namespace KompasWrapper
 		/// <param name="angels">Углы для построения округления</param>
 		private void CreateEdgeConnection(ksDocument2D document2D, List<Point> points, double radius, int[] angels)
 		{
+			//TODO: RSDN
 			document2D.ksLineSeg(points[0].X, points[0].Y, points[1].X, points[1].Y, 1);
 			document2D.ksLineSeg(points[1].X, points[1].Y, points[2].X, points[2].Y, 1);
 			document2D.ksLineSeg(points[3].X, points[3].Y, points[5].X, points[5].Y, 1);
@@ -428,6 +431,7 @@ namespace KompasWrapper
 					ParameterType.WidthTable) - WallsWidth);
 		}
 
+		//TODO: XML
 		/// <summary>
 		/// Создать прямоугольник по двум точкам
 		/// </summary>
@@ -448,6 +452,7 @@ namespace KompasWrapper
 				point1.X, point1.Y + width, 1);
 		}
 
+		//TODO: XML
 		/// <summary>
 		/// Создает эллипс
 		/// </summary>

@@ -93,6 +93,7 @@ namespace Core
 					ClearError(selectedType);
 					var newValue = 
 						_parameters[selectedType].Value;
+					//TODO: const
 					var minValue = 0.75 * _parameters[type].Value;
 					var maxValue = minValue + 300;
 					TrySetValue(minValue, maxValue, newValue,
@@ -106,11 +107,13 @@ namespace Core
 						var newValue =
 						_parameters[selectedType].Value;
 					var minValue = _parameters[selectedType].MinValue;
-					var maxValue = _parameters[type].Value / 7.5;
+                    //TODO: const
+						var maxValue = _parameters[type].Value / 7.5;
 					TrySetValue(minValue, maxValue, newValue,
 						selectedType);
 					break;
 				}
+				//TODO:
 				case ParameterType.HeightTableLeg:
 				case ParameterType.LengthTable:
 				case ParameterType.TableEdgeRadius:
