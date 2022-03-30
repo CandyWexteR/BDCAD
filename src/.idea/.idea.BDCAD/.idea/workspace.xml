@@ -8,31 +8,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2aa62eac-720a-4d57-8665-a697d3f464c8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/BDCAD/.idea/.idea.BDCAD/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/.idea/.idea.BDCAD/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/.idea/.idea.BDCAD/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/.idea/.idea.BDCAD/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/App.config" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/BDCAD.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/BDCAD.sln" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/BDCAD_BusinessLogic/BDCAD_BusinessLogic.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/BDCAD_BusinessLogic/Extensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/BDCAD_BusinessLogic/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/Extensions.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/MainForm.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/MainForm.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/MainForm.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/Properties/AssemblyInfo.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/Properties/Resources.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/Properties/Resources.resx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/Properties/Settings.Designer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BDCAD/Properties/Settings.settings" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.idea.BDCAD.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.idea.BDCAD.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BDCAD/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BDCAD/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/bc1d04d811fc4873ab7d8d9d4daddcc9568788/1b/080eb835/RuntimeType.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -43,20 +28,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-  <component name="RunManager">
-    <configuration name="TableBuild" type="DotNetProject" factoryName=".NET Project">
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected=".NET Project.TableBuild">
+    <configuration name="StressTesting" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="" />
@@ -64,12 +42,30 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/BDCAD.UI/BDCAD.UI.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/StressTesting/StressTesting.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="Console" />
       <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+    <configuration name="TableBuild" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="$PROJECT_DIR$/TableBuild/bin/Debug/TableBuild.exe" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TableBuild/bin/Debug" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/TableBuild/TableBuild.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="StaticMethod" />
+      <option name="PROJECT_TFM" value=".NETFramework,Version=v4.8" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -88,6 +84,7 @@
       <workItem from="1646834987968" duration="126000" />
       <workItem from="1646835215750" duration="8000" />
       <workItem from="1646835249200" duration="376000" />
+      <workItem from="1648655845928" duration="794000" />
     </task>
     <task id="LOCAL-00001" summary="Удалены лишние примечания в ПС">
       <created>1646835561836</created>
@@ -96,13 +93,21 @@
       <option name="project" value="LOCAL" />
       <updated>1646835561836</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Добавлено создание двери">
+      <created>1648103061187</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1648103061190</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -118,6 +123,7 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Удалены лишние примечания в ПС" />
-    <option name="LAST_COMMIT_MESSAGE" value="Удалены лишние примечания в ПС" />
+    <MESSAGE value="Добавлено создание двери" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлено создание двери" />
   </component>
 </project>

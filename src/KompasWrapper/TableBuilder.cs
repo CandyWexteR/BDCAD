@@ -146,7 +146,7 @@ namespace KompasWrapper
 			ksSketchDefinition sketchDefinition = sketch.GetDefinition();
 			sketchDefinition.SetPlane(plane);
 			sketch.Create();
-			const double holeRadius = 10;
+			const double holeRadius = 30;
 
 			var document2D = sketchDefinition.BeginEdit();
 
@@ -234,7 +234,7 @@ namespace KompasWrapper
 			_kompasWrapper.CutEvolution(_part, sketch, HoleDistance);
 		}
 
-		//TODO: XML
+		//TODO: XML(+)
 		/// <summary>
 		/// Создает соединения углов
 		/// </summary>
@@ -242,14 +242,17 @@ namespace KompasWrapper
 		/// <param name="points">Коллекция точек</param>
 		/// <param name="radius">Радиус закругления</param>
 		/// <param name="angles">Углы для построения округления</param>
+		/// <param name="direction">Направление</param>
 		private void CreateCornersConnection(ksDocument2D document2D, List<Point> points,
 			double radius, int[] angles, short direction)
 		{
-			//TODO: RSDN
-			document2D.ksLineSeg(points[0].X, points[0].Y, points[1].X, points[1].Y, 1);
-			document2D.ksLineSeg(points[0].X, points[0].Y, points[2].X, points[2].Y, 1);
-			document2D.ksArcByAngle(points[2].X, points[1].Y, radius,
-				angles[0], angles[1], direction, 1);
+			//TODO: RSDN(+)
+			document2D.ksLineSeg(points[0].X, 
+				points[0].Y, points[1].X, points[1].Y, 1);
+			document2D.ksLineSeg(points[0].X, 
+				points[0].Y, points[2].X, points[2].Y, 1);
+			document2D.ksArcByAngle(points[2].X, points[1].Y,
+				radius, angles[0], angles[1], direction, 1);
 		}
 
 		/// <summary>
@@ -311,13 +314,19 @@ namespace KompasWrapper
 		/// <param name="angels">Углы для построения округления</param>
 		private void CreateEdgeConnection(ksDocument2D document2D, List<Point> points, double radius, int[] angels)
 		{
-			//TODO: RSDN
-			document2D.ksLineSeg(points[0].X, points[0].Y, points[1].X, points[1].Y, 1);
-			document2D.ksLineSeg(points[1].X, points[1].Y, points[2].X, points[2].Y, 1);
-			document2D.ksLineSeg(points[3].X, points[3].Y, points[5].X, points[5].Y, 1);
-			document2D.ksLineSeg(points[0].X, points[0].Y, points[4].X, points[4].Y, 1);
-			document2D.ksArcByAngle(points[3].X, points[2].Y, radius, angels[0], angels[1], 0, 1);
-			document2D.ksArcByAngle(points[5].X, points[4].Y, radius, angels[2], angels[3], 0, 1);
+			//TODO: RSDN(+)
+			document2D.ksLineSeg(points[0].X, points[0].Y,
+				points[1].X, points[1].Y, 1);
+			document2D.ksLineSeg(points[1].X, points[1].Y,
+				points[2].X, points[2].Y, 1);
+			document2D.ksLineSeg(points[3].X, points[3].Y,
+				points[5].X, points[5].Y, 1);
+			document2D.ksLineSeg(points[0].X, points[0].Y,
+				points[4].X, points[4].Y, 1);
+			document2D.ksArcByAngle(points[3].X, points[2].Y,
+				radius, angels[0], angels[1], 0, 1);
+			document2D.ksArcByAngle(points[5].X, points[4].Y,
+				radius, angels[2], angels[3], 0, 1);
 		}
 
 		/// <summary>
@@ -393,7 +402,8 @@ namespace KompasWrapper
 		/// </summary>
 		private void CreateHoles()
 		{
-			const int holeNumber = 2;
+			var holeNumber = _parameters.GetValue(
+				ParameterType.ShelvesCount);
 			var dresserHeight = _parameters.GetValue(
 				ParameterType.HeightTable);
 			var boxHeight =
@@ -431,12 +441,13 @@ namespace KompasWrapper
 					ParameterType.WidthTable) - WallsWidth);
 		}
 
-		//TODO: XML
+		//TODO: XML(+)
 		/// <summary>
 		/// Создать прямоугольник по двум точкам
 		/// </summary>
 		/// <param name="point1"></param>
 		/// <param name="point2"></param>
+		/// <param name="document2D"></param>
 		private void CreateRectangle(Point point1,
 			Point point2, ksDocument2D document2D)
 		{
@@ -452,7 +463,7 @@ namespace KompasWrapper
 				point1.X, point1.Y + width, 1);
 		}
 
-		//TODO: XML
+		//TODO: XML(+)
 		/// <summary>
 		/// Создает эллипс
 		/// </summary>
@@ -460,6 +471,7 @@ namespace KompasWrapper
 		/// <param name="yc">Y координата центра эллипса</param>
 		/// <param name="radius1">Первый радиус эллипса</param>
 		/// <param name="radius2">Второй радиус эллипса</param>
+		/// <param name="document2D">Эскиз</param>
 		/// <returns></returns>
 		private ksEllipseParam CreateEllipse(double xc, double yc,
 			double radius1, double radius2, ksDocument2D document2D)

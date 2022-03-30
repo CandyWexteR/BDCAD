@@ -42,7 +42,8 @@ namespace TableBuild
 				{LengthTableTextBox, ParameterType.LengthTable},
 				{TableCornersRoundingTextBox, ParameterType.TableCornersRadius},
 				{TableEdgeRoundingTextBox, ParameterType.TableEdgeRadius},
-				{WidthTableTextBox, ParameterType.WidthTable}
+				{WidthTableTextBox, ParameterType.WidthTable},
+				{ShelvesCountTextBox, ParameterType.ShelvesCount}
 			};
 
 			SetValues();
@@ -65,15 +66,17 @@ namespace TableBuild
 				ParameterType.TableEdgeRadius).ToString();
 			WidthTableTextBox.Text = _parameters.GetValue(
 				ParameterType.WidthTable).ToString();
+			ShelvesCountTextBox.Text= _parameters.GetValue(
+				ParameterType.ShelvesCount).ToString();
 		}
 
-		//TODO: RSDN
+		//TODO: RSDN(+)
 		/// <summary>
 		/// Обработчик события нажатия на кнопку
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		private void button1_Click(object sender, EventArgs e)
+		private void Button1_Click(object sender, EventArgs e)
 		{
 			if (_parameters.HasError)
 			{
@@ -119,7 +122,12 @@ namespace TableBuild
 			errorTextBox.BackColor = Color.White;
 		}
 
-		//TODO: XML
+		//TODO: XML(+)
+		/// <summary>
+		/// Оброботчик события наведения мыши на текстбокс
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		private void TextBox_MouseHover(object sender, EventArgs e)
 		{
 			if (!(sender is TextBox textBox))

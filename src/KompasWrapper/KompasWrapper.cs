@@ -78,12 +78,13 @@ namespace KompasWrapper
 			extrude.Create();
 		}
 
-		//TODO: XML
+		//TODO: XML(+)
 		/// <summary>
 		/// Выдавливание с вырезом
 		/// </summary>
 		/// <param name="part"></param>
 		/// <param name="sketch"></param>
+		/// <param name="depth"></param>
 		public void CutEvolution(ksPart part, ksEntity sketch, double depth)
 		{
 			// Выдавливание с вырезом

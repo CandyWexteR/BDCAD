@@ -40,6 +40,10 @@ namespace TestCore
 			10,
 			TestName = "Проверка корректного получения" +
 							 " значения параметра TableEdgeRadius.")]
+		[TestCase(ParameterType.ShelvesCount,
+			2,
+			TestName = "Проверка корректного получения" +
+							 " значения параметра ShelvesCount.")]
 		public void TestGetValueParameter_CorrectValue(ParameterType parameterType, int expected)
 		{
 			var parameters = Parameters;
@@ -74,6 +78,10 @@ namespace TestCore
 			0,
 			TestName = "Проверка корректного присвоения" +
 					   " значения параметра TableEdgeRadius.")]
+		[TestCase(ParameterType.ShelvesCount,
+			1,
+			TestName = "Проверка корректного получения" +
+			           " значения параметра ShelvesCount.")]
 		public void TestSetValueParameter_CorrectValue(ParameterType parameterType, int value)
 		{
 			var parameters = Parameters;
@@ -114,6 +122,10 @@ namespace TestCore
 			-45100,
 			TestName = "Проверка корректного присвоения" +
 			           " значения параметра TableEdgeRadius.")]
+		[TestCase(ParameterType.ShelvesCount,
+			20,
+			TestName = "Проверка корректного получения" +
+			           " значения параметра ShelvesCount.")]
 		public void TestSetValueParameter_IncorrectValue(ParameterType parameterType, int value)
 		{
 			var parameters = Parameters;

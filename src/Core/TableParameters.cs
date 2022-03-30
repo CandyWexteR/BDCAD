@@ -38,6 +38,10 @@ namespace Core
 				{
 					ParameterType.TableEdgeRadius,
 					new Parameter(0, 15, 10)
+				},
+				{
+					ParameterType.ShelvesCount,
+					new Parameter(1, 4, 2)
 				}
 			};
 
@@ -93,9 +97,11 @@ namespace Core
 					ClearError(selectedType);
 					var newValue = 
 						_parameters[selectedType].Value;
-					//TODO: const
-					var minValue = 0.75 * _parameters[type].Value;
-					var maxValue = minValue + 300;
+					const double minimumCoefficient = 0.75;
+					const double addingToMaximum = 300;
+					//TODO: const (+)
+					var minValue = minimumCoefficient * _parameters[type].Value;
+					var maxValue = minValue + addingToMaximum;
 					TrySetValue(minValue, maxValue, newValue,
 						selectedType);
 					break;
@@ -107,17 +113,14 @@ namespace Core
 						var newValue =
 						_parameters[selectedType].Value;
 					var minValue = _parameters[selectedType].MinValue;
-                    //TODO: const
-						var maxValue = _parameters[type].Value / 7.5;
+					const double maximumCoefficient = 7.5;
+					//TODO: const (+)
+						var maxValue = _parameters[type].Value / maximumCoefficient;
 					TrySetValue(minValue, maxValue, newValue,
 						selectedType);
 					break;
 				}
-				//TODO:
-				case ParameterType.HeightTableLeg:
-				case ParameterType.LengthTable:
-				case ParameterType.TableEdgeRadius:
-				case ParameterType.TableCornersRadius:
+				//TODO:(+)
 				default:
 				{
 					break;

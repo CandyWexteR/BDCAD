@@ -25,7 +25,7 @@ namespace Core
 	        set
             {
 	            _value = value;
-                Validator.CheckValue(value, MinValue, MaxValue);
+                CheckValue(value, MinValue, MaxValue);
 	        }
         }
 
@@ -51,6 +51,26 @@ namespace Core
 	        MinValue = minValue;
 	        MaxValue = maxValue;
 	        Value = value;
+        }
+
+
+        //TODO: (+)
+        /// <summary>
+        /// Проверка значение на вхождение в промежуток
+        /// </summary>
+        /// <param name="value">Значение для проверки</param>
+        /// <param name="minValue">Минимальное значение</param>
+        /// <param name="maxValue">Максимальное значение</param>
+        private static void CheckValue(double value,
+	        double minValue, double maxValue)
+        {
+	        if (value < minValue || value > maxValue)
+	        {
+		        throw new ArgumentException(
+			        "Значение должно входить в " +
+			        $"диапазон {minValue} — {maxValue}!" +
+			        $" Текущее значение {value}");
+	        }
         }
     }
 }

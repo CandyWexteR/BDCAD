@@ -11,5 +11,6 @@
 		LengthTable,
 		TableEdgeRadius,
 		TableCornersRadius,
+		ShelvesCount,
 	}
 }

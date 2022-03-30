@@ -44,6 +44,8 @@ namespace TableBuild
 			this.label6 = new System.Windows.Forms.Label();
 			this.button1 = new System.Windows.Forms.Button();
 			this.ErrorToolTip = new System.Windows.Forms.ToolTip(this.components);
+			this.ShelvesCountTextBox = new System.Windows.Forms.TextBox();
+			this.label7 = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -157,20 +159,41 @@ namespace TableBuild
 			// 
 			// button1
 			// 
-			this.button1.Location = new System.Drawing.Point(122, 257);
+			this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+			this.button1.Location = new System.Drawing.Point(122, 295);
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 12;
 			this.button1.Text = "Построить";
 			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.button1_Click);
+			this.button1.Click += new System.EventHandler(this.Button1_Click);
+			// 
+			// ShelvesCountTextBox
+			// 
+			this.ShelvesCountTextBox.Location = new System.Drawing.Point(13, 264);
+			this.ShelvesCountTextBox.Name = "ShelvesCountTextBox";
+			this.ShelvesCountTextBox.Size = new System.Drawing.Size(164, 20);
+			this.ShelvesCountTextBox.TabIndex = 14;
+			this.ShelvesCountTextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
+			this.ShelvesCountTextBox.MouseHover += new System.EventHandler(this.TextBox_MouseHover);
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Location = new System.Drawing.Point(13, 248);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(102, 13);
+			this.label7.TabIndex = 13;
+			this.label7.Text = "Количество полок:";
 			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-			this.ClientSize = new System.Drawing.Size(209, 292);
+			this.ClientSize = new System.Drawing.Size(209, 330);
+			this.Controls.Add(this.ShelvesCountTextBox);
+			this.Controls.Add(this.label7);
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.TableCornersRoundingTextBox);
 			this.Controls.Add(this.label6);
@@ -209,6 +232,8 @@ namespace TableBuild
 		private System.Windows.Forms.Label label6;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.ToolTip ErrorToolTip;
+		private System.Windows.Forms.TextBox ShelvesCountTextBox;
+		private System.Windows.Forms.Label label7;
 	}
 }
 
