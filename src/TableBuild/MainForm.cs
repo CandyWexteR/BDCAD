@@ -69,13 +69,10 @@ namespace TableBuild
 			ShelvesCountTextBox.Text= _parameters.GetValue(
 				ParameterType.ShelvesCount).ToString();
 		}
-
-		//TODO: RSDN(+)
+		
 		/// <summary>
 		/// Обработчик события нажатия на кнопку
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void Button1_Click(object sender, EventArgs e)
 		{
 			if (_parameters.HasError)
@@ -121,14 +118,11 @@ namespace TableBuild
 
 			errorTextBox.BackColor = Color.White;
 		}
-
-		//TODO: XML(+)
+		
 		/// <summary>
 		/// Оброботчик события наведения мыши на текстбокс
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
-		private void TextBox_MouseHover(object sender, EventArgs e)
+        private void TextBox_MouseHover(object sender, EventArgs e)
 		{
 			if (!(sender is TextBox textBox))
 			{

@@ -22,6 +22,7 @@ namespace StressTesting
 			{
 					builder.Build(tableParameters);
 					var computerInfo = new ComputerInfo();
+					//TODO:
 					var usedMemory = (computerInfo.TotalPhysicalMemory - computerInfo.AvailablePhysicalMemory) *
 					                 0.000000000931322574615478515625;
 					streamWriter.WriteLine(
