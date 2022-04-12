@@ -146,14 +146,13 @@ namespace KompasWrapper
 			ksSketchDefinition sketchDefinition = sketch.GetDefinition();
 			sketchDefinition.SetPlane(plane);
 			sketch.Create();
-			const double holeRadius = 30;
+			const double holeRadius = 25;
 
 			var document2D = sketchDefinition.BeginEdit();
 
-			var circlePoint1 = new Point(doorDistance * 2 + holeRadius,
-				-dresserHeight + HoleDistance + doorDistance * 2 + holeRadius);
-			var circlePoint2 = new Point(-doorDistance * 2 - holeRadius,
-				-dresserHeight + HoleDistance + doorDistance * 2 + holeRadius);
+			var y = -dresserHeight + HoleDistance + doorDistance * 2 + holeRadius * 2;
+			var circlePoint1 = new Point((doorDistance + holeRadius) * 2, y);
+			var circlePoint2 = new Point((-doorDistance - holeRadius)* 2, y);
 
 			CreateEllipse(circlePoint1.X, circlePoint1.Y,
 				holeRadius, holeRadius, document2D);
@@ -233,7 +232,8 @@ namespace KompasWrapper
 			
 			_kompasWrapper.CutEvolution(_part, sketch, HoleDistance);
 		}
-		
+
+		//TODO: XML(+)
 		/// <summary>
 		/// Создает соединения углов
 		/// </summary>
@@ -245,6 +245,7 @@ namespace KompasWrapper
 		private void CreateCornersConnection(ksDocument2D document2D, List<Point> points,
 			double radius, int[] angles, short direction)
 		{
+			//TODO: RSDN(+)
 			document2D.ksLineSeg(points[0].X, 
 				points[0].Y, points[1].X, points[1].Y, 1);
 			document2D.ksLineSeg(points[0].X, 
@@ -310,9 +311,9 @@ namespace KompasWrapper
 		/// <param name="points">Коллекция точек</param>
 		/// <param name="radius">Радиус закругления</param>
 		/// <param name="angels">Углы для построения округления</param>
-		/// //TODO: RSDN
 		private void CreateEdgeConnection(ksDocument2D document2D, List<Point> points, double radius, int[] angels)
 		{
+			//TODO: RSDN(+)
 			document2D.ksLineSeg(points[0].X, points[0].Y,
 				points[1].X, points[1].Y, 1);
 			document2D.ksLineSeg(points[1].X, points[1].Y,
@@ -439,13 +440,13 @@ namespace KompasWrapper
 					ParameterType.WidthTable) - WallsWidth);
 		}
 
-		//TODO: XML
+		//TODO: XML(+)
 		/// <summary>
 		/// Создать прямоугольник по двум точкам
 		/// </summary>
-		/// <param name="point1"></param>
-		/// <param name="point2"></param>
-		/// <param name="document2D"></param>
+		/// <param name="point1">Координата первой точки</param>
+		/// <param name="point2">Координата второй точки</param>
+		/// <param name="document2D">Эскиз</param>
 		private void CreateRectangle(Point point1,
 			Point point2, ksDocument2D document2D)
 		{
@@ -460,8 +461,8 @@ namespace KompasWrapper
 			document2D.ksLineSeg(point1.X, point1.Y,
 				point1.X, point1.Y + width, 1);
 		}
-		
-		//TODO:
+
+		//TODO: XML(+)
 		/// <summary>
 		/// Создает эллипс
 		/// </summary>
@@ -470,8 +471,7 @@ namespace KompasWrapper
 		/// <param name="radius1">Первый радиус эллипса</param>
 		/// <param name="radius2">Второй радиус эллипса</param>
 		/// <param name="document2D">Эскиз</param>
-		/// <returns></returns>
-		private ksEllipseParam CreateEllipse(double xc, double yc,
+		private void CreateEllipse(double xc, double yc,
 			double radius1, double radius2, ksDocument2D document2D)
 		{
 			const int ellipseParamId = 22;
@@ -482,7 +482,6 @@ namespace KompasWrapper
 			ellipseParam.B = radius2;
 			ellipseParam.style = 1;
 			document2D.ksEllipse(ellipseParam);
-			return ellipseParam;
 		}
 	}
 }

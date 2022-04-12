@@ -80,7 +80,7 @@ namespace TestCore
 					   " значения параметра TableEdgeRadius.")]
 		[TestCase(ParameterType.ShelvesCount,
 			1,
-			TestName = "Проверка корректного получения" +
+			TestName = "Проверка корректного присвоения" +
 			           " значения параметра ShelvesCount.")]
 		public void TestSetValueParameter_CorrectValue(ParameterType parameterType, int value)
 		{
@@ -104,27 +104,27 @@ namespace TestCore
 			           " значения параметра WidthTable.")]
 		[TestCase(ParameterType.HeightTable,
 			-700,
-			TestName = "Проверка корректного присвоения" +
+			TestName = "Проверка некорректного присвоения" +
 			           " значения параметра HeightTable.")]
 		[TestCase(ParameterType.HeightTableLeg,
 			99970,
-			TestName = "Проверка корректного присвоения" +
+			TestName = "Проверка некорректного присвоения" +
 			           " значения параметра HeightTableLeg.")]
 		[TestCase(ParameterType.LengthTable,
 			-550,
-			TestName = "Проверка корректного присвоения" +
+			TestName = "Проверка некорректного присвоения" +
 			           " значения параметра LengthTable.")]
 		[TestCase(ParameterType.TableCornersRadius,
 			120050,
-			TestName = "Проверка корректного присвоения" +
+			TestName = "Проверка некорректного присвоения" +
 			           " значения параметра TableCornersRadius.")]
 		[TestCase(ParameterType.TableEdgeRadius,
 			-45100,
-			TestName = "Проверка корректного присвоения" +
+			TestName = "Проверка некорректного присвоения" +
 			           " значения параметра TableEdgeRadius.")]
 		[TestCase(ParameterType.ShelvesCount,
 			20,
-			TestName = "Проверка корректного получения" +
+			TestName = "Проверка некорректного получения" +
 			           " значения параметра ShelvesCount.")]
 		public void TestSetValueParameter_IncorrectValue(ParameterType parameterType, int value)
 		{
@@ -200,23 +200,23 @@ namespace TestCore
 					   " значения параметра WidthTable.")]
 		[TestCase(ParameterType.HeightTable,
 			"-700",
-			TestName = "Проверка корректного присвоения" +
+			TestName = "Проверка некорректного присвоения" +
 					   " значения параметра HeightTable.")]
 		[TestCase(ParameterType.HeightTableLeg,
 			"asdasdasd",
-			TestName = "Проверка корректного присвоения" +
+			TestName = "Проверка некорректного присвоения" +
 					   " значения параметра HeightTableLeg.")]
 		[TestCase(ParameterType.LengthTable,
 			"-550",
-			TestName = "Проверка корректного присвоения" +
+			TestName = "Проверка некорректного присвоения" +
 					   " значения параметра LengthTable.")]
 		[TestCase(ParameterType.TableCornersRadius,
 			"sadfasda",
-			TestName = "Проверка корректного присвоения" +
+			TestName = "Проверка некорректного присвоения" +
 					   " значения параметра TableCornersRadius.")]
 		[TestCase(ParameterType.TableEdgeRadius,
 			"-45100",
-			TestName = "Проверка корректного присвоения" +
+			TestName = "Проверка некорректного присвоения" +
 					   " значения параметра TableEdgeRadius.")]
 		public void TestSetValueParameter_IncorrectStringValue(ParameterType parameterType, string value)
 		{

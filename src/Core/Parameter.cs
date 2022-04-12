@@ -53,8 +53,10 @@ namespace Core
 	        Value = value;
         }
 
+
+        //TODO: (+)
         /// <summary>
-        /// Проверка значение на вхождение в промежуток
+        /// Проверка значение на принадлежность промежутку
         /// </summary>
         /// <param name="value">Значение для проверки</param>
         /// <param name="minValue">Минимальное значение</param>

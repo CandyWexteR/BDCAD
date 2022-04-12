@@ -88,8 +88,6 @@ namespace TableBuild
 		/// <summary>
 		/// Обработчик события для текстбоксов
 		/// </summary>
-		/// <param name="sender"></param>
-		/// <param name="e"></param>
 		private void TextBox_TextChanged(object sender, EventArgs e)
 		{
 			if (!(sender is TextBox textBox))
