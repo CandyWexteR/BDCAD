@@ -77,8 +77,7 @@ namespace KompasWrapper
 			extrudeParam.depthNormal = height;
 			extrude.Create();
 		}
-
-		//TODO: XML(+)
+		
 		/// <summary>
 		/// Выдавливание с вырезом
 		/// </summary>

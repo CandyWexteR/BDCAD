@@ -53,8 +53,6 @@ namespace Core
 	        Value = value;
         }
 
-
-        //TODO: (+)
         /// <summary>
         /// Проверка значение на принадлежность промежутку
         /// </summary>

@@ -99,7 +99,7 @@ namespace Core
 						_parameters[selectedType].Value;
 					const double minimumCoefficient = 0.75;
 					const double addingToMaximum = 300;
-					//TODO: const (+)
+
 					var minValue = minimumCoefficient * _parameters[type].Value;
 					var maxValue = minValue + addingToMaximum;
 					TrySetValue(minValue, maxValue, newValue,
@@ -114,13 +114,12 @@ namespace Core
 						_parameters[selectedType].Value;
 					var minValue = _parameters[selectedType].MinValue;
 					const double maximumCoefficient = 7.5;
-					//TODO: const (+)
-						var maxValue = _parameters[type].Value / maximumCoefficient;
+					
+                    var maxValue = _parameters[type].Value / maximumCoefficient;
 					TrySetValue(minValue, maxValue, newValue,
 						selectedType);
 					break;
 				}
-				//TODO:(+)
 			}
 		}
 
